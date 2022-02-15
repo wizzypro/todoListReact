@@ -3,7 +3,10 @@ import React, { useState } from "react";
 function ListItem(props) {
   const [clickedState, setClickedState] = useState(false);
   function clickHandler(event) {
-    clickedState ? setClickedState(false) : setClickedState(true);
+    setClickedState((prevValue) => {
+      return !prevValue;
+    });
+    // clickedState ? setClickedState(false) : setClickedState(true);
   }
   return (
     <li
