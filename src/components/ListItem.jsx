@@ -10,7 +10,9 @@ function ListItem(props) {
   }
   return (
     <li
-      onClick={clickHandler}
+      onClick={() => {
+        props.onClick(props.id);
+      }}
       style={{ textDecoration: clickedState && "line-through" }}
     >
       {props.item}

@@ -19,6 +19,14 @@ function App() {
 
     setList("");
   }
+
+  function deleteHandler(id) {
+    setListArray((prevValue) => {
+      return prevValue.filter((array, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div className="container">
       <Heading className="heading" value="To-Do List" />
@@ -29,7 +37,7 @@ function App() {
         btnValue="Add"
         btnOnClick={todoHandler}
       />
-      <List array={listArray} />
+      <List array={listArray} id={deleteHandler} />
     </div>
   );
 }

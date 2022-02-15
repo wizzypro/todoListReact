@@ -5,8 +5,8 @@ function List(props) {
   return (
     <div>
       <ul>
-        {props.array.map((list) => (
-          <ListItem item={list} />
+        {props.array.map((list, i) => (
+          <ListItem item={list} key={i} id={i} onClick={props.id} />
         ))}
       </ul>
     </div>
