@@ -1,11 +1,12 @@
 import React from "react";
+import ListItem from "./ListItem";
 
 function List(props) {
   return (
     <div>
       <ul>
         {props.array.map((list) => (
-          <li>{list}</li>
+          <ListItem item={list} />
         ))}
       </ul>
     </div>
